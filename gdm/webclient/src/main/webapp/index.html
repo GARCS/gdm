@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="<%= locale %>" ng-app="gdmApp" ng-controller="appController" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>gdmApp</title>
+	<meta name="keywords" content="gdmApp jee, java, architecture" />
+	<meta name="description" content="Lightweight REST JEE Arch Pattern" />
+	
+	<link href="res/css/themes.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/basic.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/elements.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/viewports.css" rel="stylesheet" type="text/css" />
+	<link href="res/css/angular-moment-picker.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="{{ 'theme.color' | translate}}">
+	<div id="page" class="rows{{ 'theme.rows' | translate}} cols{{ 'theme.columns' | translate}} {{ 'theme.properties' | translate}}">
+			<div ng-view></div>
+				<div id="footerBox">
+		<p>&copy; LireJarp</p>
+	</div>
+	</div>
+
+	<script src="res/lib/angular.min.js" type="application/javascript"></script>
+	<script src="res/lib/angular-route.min.js" type="application/javascript"></script>
+	<script src="res/lib/angular-translate.min.js" type="application/javascript"></script>
+	<script src="res/lib/angular-translate-loader-static-files.min.js" type="application/javascript"></script>
+	<script src="res/lib/moment-with-locales.js" charset="UTF-8"></script>
+	<script src="res/lib/tmhDynamicLocale.min.js"></script>
+	<script src="res/lib/angular-moment-picker.min.js"></script>
+	
+	<script src="shared/directives/global.directives.js" type="application/javascript"></script>
+	<script src="shared/restfacade/rest.connector.factory.js"></script>
+	
+<script src="shared/restfacade/deploymentpackage.connector.factory.js" type="application/javascript"></script>
+<script src="viewcomponents/deploymentpackage/deploymentpackage.module.js" type="application/javascript" ></script>
+<script src="viewcomponents/deploymentpackage/deploymentpackage.routes.js" type="application/javascript" ></script>
+<script src="viewcomponents/deploymentpackage/deploymentpackageSingleCtrl.js" type="application/javascript" ></script>
+<script src="viewcomponents/deploymentpackage/deploymentpackageAllCtrl.js" type="application/javascript" ></script>
+<script src="shared/restfacade/selfconfig.connector.factory.js" type="application/javascript"></script>
+<script src="viewcomponents/selfconfig/selfconfig.module.js" type="application/javascript" ></script>
+<script src="viewcomponents/selfconfig/selfconfig.routes.js" type="application/javascript" ></script>
+<script src="viewcomponents/selfconfig/selfconfigSingleCtrl.js" type="application/javascript" ></script>
+<script src="viewcomponents/selfconfig/selfconfigAllCtrl.js" type="application/javascript" ></script>
+
+	<!-- DO NOT DELETE ###GENERATION### generated scripts -->
+
+	<script src="app.module.js"></script>
+	<script src="app.routes.js"></script>
+
+</body>
+</html>

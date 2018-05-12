@@ -1,0 +1,58 @@
+<div id="headerBox" ng-include="'menu.html'"></div>
+
+<div id="subheaderBox" class="aCenter">
+	<div class="bottom">
+		<span class="button add"><a ng-click="ctrl.gotoDeploymentPackage.create();">* {{'button.add' | translate}}</a></span>
+		<span class="button"><a ng-click="ctrl.idSelected != null && ctrl.gotoDeploymentPackage.update(ctrl.idSelected);" ng-disabled="ctrl.idSelected == null">+ {{'button.update' | translate}}</a></span>
+		<span class="button"><a ng-click="ctrl.idSelected != null && ctrl.deleteDeploymentPackage(ctrl.idSelected);" ng-disabled="ctrl.idSelected == null">- {{'button.delete' | translate}}</a></span>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="bodyBox">
+	<div class="contain">
+		<table>
+			<colgroup>
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    	</colgroup>
+		<thead>
+			<tr>
+				<th>{{'deploymentpackage.uploadDate' | translate}}</th>
+				<th>{{'deploymentpackage.uniqueNodeIdentifier' | translate}}</th>
+				<th>{{'deploymentpackage.prio' | translate}}</th>
+				<th>{{'deploymentpackage.technology' | translate}}</th>
+				<th>{{'deploymentpackage.uploadPath' | translate}}</th>
+				<th>{{'deploymentpackage.version' | translate}}</th>
+				<th>{{'deploymentpackage.uploadFileName' | translate}}</th>
+				<th>{{'deploymentpackage.isInstalled' | translate}}</th>
+				<th>{{'deploymentpackage.needsRoot' | translate}}</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr ng-repeat="deploymentpackage in ctrl.deploymentpackageAll" ng-click="ctrl.setSelected(deploymentpackage.id)" 
+				ng-class="{selected: deploymentpackage.id === ctrl.idSelected }" 
+				ng-dblclick="ctrl.setSelected(deploymentpackage.id);ctrl.gotoDeploymentPackage.update(ctrl.idSelected);">
+
+				<td>{{deploymentpackage.uploadDate  | formatLocalDate   }}</td>
+				<td>{{deploymentpackage.uniqueNodeIdentifier   }}</td>
+				<td>{{deploymentpackage.prio   }}</td>
+				<td>{{deploymentpackage.technology   }}</td>
+				<td>{{deploymentpackage.uploadPath   }}</td>
+				<td>{{deploymentpackage.version   }}</td>
+				<td>{{deploymentpackage.uploadFileName   }}</td>
+				<td>{{deploymentpackage.isInstalled   }}</td>
+				<td>{{deploymentpackage.needsRoot   }}</td>
+			</tr>
+		</tbody>
+		<tfoot></tfoot>
+		</table>
+	</div>	
+</div>

@@ -1,0 +1,40 @@
+<div id="headerBox" ng-include="'menu.html'"></div>
+
+<div id="subheaderBox" class="aCenter">
+	<div class="bottom">
+		<span class="button add"><a ng-click="ctrl.gotoSelfConfig.create();">* {{'button.add' | translate}}</a></span>
+		<span class="button"><a ng-click="ctrl.idSelected != null && ctrl.gotoSelfConfig.update(ctrl.idSelected);" ng-disabled="ctrl.idSelected == null">+ {{'button.update' | translate}}</a></span>
+		<span class="button"><a ng-click="ctrl.idSelected != null && ctrl.deleteSelfConfig(ctrl.idSelected);" ng-disabled="ctrl.idSelected == null">- {{'button.delete' | translate}}</a></span>
+		<div class="clearer"></div>
+	</div>
+</div>
+
+<div id="bodyBox">
+	<div class="contain">
+		<table>
+			<colgroup>
+	    		<col class="">
+	    		<col class="">
+	    		<col class="">
+	    	</colgroup>
+		<thead>
+			<tr>
+				<th>{{'selfconfig.busURI' | translate}}</th>
+				<th>{{'selfconfig.uploadPath' | translate}}</th>
+				<th>{{'selfconfig.packagePath' | translate}}</th>
+			</tr>	
+		</thead>
+		<tbody>
+			<tr ng-repeat="selfconfig in ctrl.selfconfigAll" ng-click="ctrl.setSelected(selfconfig.id)" 
+				ng-class="{selected: selfconfig.id === ctrl.idSelected }" 
+				ng-dblclick="ctrl.setSelected(selfconfig.id);ctrl.gotoSelfConfig.update(ctrl.idSelected);">
+
+				<td>{{selfconfig.busURI   }}</td>
+				<td>{{selfconfig.uploadPath   }}</td>
+				<td>{{selfconfig.packagePath   }}</td>
+			</tr>
+		</tbody>
+		<tfoot></tfoot>
+		</table>
+	</div>	
+</div>

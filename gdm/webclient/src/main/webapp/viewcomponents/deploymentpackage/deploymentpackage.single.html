@@ -1,0 +1,95 @@
+<div id="headerBox" ng-include="'menu.html'"></div>
+<div id="bodyBox">
+	<div class="contain">
+		<form name="ctrl.form" ng-init="sent=true;">
+			<fieldset>
+				<label for="uploaddate">{{'deploymentpackage.uploadDate' | translate}}:</label> 
+				<input name="uploaddate" id="uploaddate" type="text"
+					moment-picker="ctrl.deploymentpackageuploadDateformated"
+					ng-model="ctrl.deploymentpackage.uploadDate"
+					ng-value="ctrl.deploymentpackage.uploadDate | formatLocalDate"
+					required /> 
+				<label ng-show="ctrl.form.uploaddate.$error.required">{{'error.required' | translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="uniquenodeidentifier">{{'deploymentpackage.uniqueNodeIdentifier'
+					| translate}}:</label> <input name="uniquenodeidentifier"
+					id="uniquenodeidentifier" type="text"
+					ng-model="ctrl.deploymentpackage.uniqueNodeIdentifier" required />
+				<label ng-show="ctrl.form.uniquenodeidentifier.$error.required">{{'error.required'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="prio">{{'deploymentpackage.prio' | translate}}:</label>
+				<input name="prio" id="prio" type="number"
+					ng-model="ctrl.deploymentpackage.prio" numberinput=''
+					ng-pattern="/^[0-9]+$/" min="0" max="10" required /> <label
+					ng-show="ctrl.form.prio.$error.pattern">{{'error.number' |
+					translate}}</label> <label ng-show="ctrl.form.prio.$error.minlength">{{'error.minlength'
+					| translate}}</label> <label ng-show="ctrl.form.prio.$error.maxlength">{{'error.maxlength'
+					| translate}}</label> <label ng-show="ctrl.form.prio.$error.required">{{'error.required'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label ng-show="ctrl.form.technology.$error.required">{{'error.required'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="uploadpath">{{'deploymentpackage.uploadPath' |
+					translate}}:</label> <input name="uploadpath" id="uploadpath" type="text"
+					ng-model="ctrl.deploymentpackage.uploadPath" required /> <label
+					ng-show="ctrl.form.uploadpath.$error.required">{{'error.required'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="version">{{'deploymentpackage.version' |
+					translate}}:</label> <input name="version" id="version" type="text"
+					ng-model="ctrl.deploymentpackage.version" />
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="uploadfilename">{{'deploymentpackage.uploadFileName'
+					| translate}}:</label> <input name="uploadfilename" id="uploadfilename"
+					type="text" ng-model="ctrl.deploymentpackage.uploadFileName"
+					required /> <label
+					ng-show="ctrl.form.uploadfilename.$error.required">{{'error.required'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="isinstalled">{{'deploymentpackage.isInstalled' |
+					translate}}:</label> <input name="isinstalled" id="isinstalled"
+					type="number" ng-model="ctrl.deploymentpackage.isInstalled"
+					numberinput='' ng-pattern="/^[0-9]+$/" /> <label
+					ng-show="ctrl.form.isinstalled.$error.pattern">{{'error.number'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<fieldset>
+				<label for="needsroot">{{'deploymentpackage.needsRoot' |
+					translate}}:</label> <input name="needsroot" id="needsroot" type="number"
+					ng-model="ctrl.deploymentpackage.needsRoot" numberinput=''
+					ng-pattern="/^[0-9]+$/" /> <label
+					ng-show="ctrl.form.needsroot.$error.pattern">{{'error.number'
+					| translate}}</label>
+				<div class="clear"></div>
+			</fieldset>
+			<div class="submitArea">
+				<button class="buttonRounded"
+					ng-click="ctrl.gotoDeploymentPackage.all();">
+					<img src="res/img/icons/back.png" border="0" /><span
+						class="hidden">{{'button.back' | translate}}</span>
+				</button>
+				<button class="buttonRounded right" ng-click="ctrl.doMaintain()">
+					<img src="res/img/icons/save.png" border="0" /><span
+						class="hidden">{{'button.save' | translate}}</span>
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
